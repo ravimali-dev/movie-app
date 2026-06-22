@@ -21,3 +21,14 @@ async function searchMovie(movieName) {
     
 }
 
+async function getTopRated() {
+    try{
+            let response = await fetch(`${BASE_URL}movie/top_rated?api_key=${API_KEY}`)
+            let TopRatedMovieData = await response.json();
+            return TopRatedMovieData
+    }catch(errer){
+        console.error(errer)
+    }
+    
+}
+
