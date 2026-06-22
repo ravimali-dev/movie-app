@@ -43,3 +43,23 @@ async function getUpcoming() {
     
 }
 
+async function getMovieDetails(movie_id) {
+    try{
+            let response = await fetch(`${BASE_URL}movie/${movie_id}?api_key=${API_KEY}`)
+            let getMovieDetailData = await response.json();
+            return getMovieDetailData;
+    }catch(errer){
+        console.error(errer)
+    }
+    
+}
+
+export {
+    getTrending,
+    searchMovie,
+    getTopRated,
+    getUpcoming,
+    getMovieDetails
+};
+
+
