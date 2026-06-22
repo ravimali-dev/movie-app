@@ -32,3 +32,14 @@ async function getTopRated() {
     
 }
 
+async function getUpcoming() {
+    try{
+            let response = await fetch(`${BASE_URL}movie/upcoming?api_key=${API_KEY}`)
+            let getUpMovieData = await response.json();
+            return getUpMovieData;
+    }catch(errer){
+        console.error(errer)
+    }
+    
+}
+
