@@ -47,4 +47,4 @@ CineSearch/
 - 🔧 **URLSearchParams** — URL se data nikalna
 
 ## 🚀 Live Demo
-Coming soon...
+movie-app-seven-neon.vercel.app
