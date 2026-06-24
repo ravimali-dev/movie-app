@@ -8,6 +8,7 @@ function displayMovies(movies) {
     for(let movie of movies) {
         let card = document.createElement("div")
         card.className = "movie-card";
+        card.dataset.id = movie.id 
         let title = document.createElement("h3")
         title.textContent = movie.title
         let image = document.createElement("img")
@@ -23,7 +24,13 @@ function displayMovies(movies) {
         card.appendChild(image);
         card.appendChild(release_date);
         card.appendChild(vote_average)
-        container.appendChild(card)
+        
+
+let favBtn = document.createElement("button")
+favBtn.className = "fav-btn"
+favBtn.textContent = "❤️"
+card.appendChild(favBtn)
+container.appendChild(card)
     }
 }
 
