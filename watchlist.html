@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html">Home</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="watchlist.html">watchlist</a>
+    <div id="movies-container"></div>
+
+    <script type="module">
+        import { displayMovies } from "./js/ui.js";
+        
+    let watchList = JSON.parse(localStorage.getItem("watchList")) || []
+    displayMovies(watchList, true)
+    
+    document.getElementById("movies-container").addEventListener("click", (e) => {
+        if(e.target.classList.contains("remove-btn")) {
+            let watchList = JSON.parse(localStorage.getItem("watchList")) || []
+let movieId = e.target.closest(".movie-card").dataset.id
+let updated = watchList.filter(movie => movie.id !== Number(movieId))
+localStorage.setItem("watchList", JSON.stringify(updated))
+
+    displayMovies(updated, true)
+        }
+    })
+    </script>
+</body>
+</html>
