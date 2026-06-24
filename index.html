@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="nav-bar">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="favorites.html">Favorites</a>
-            <a href="watchlist.html">watchlist</a>
-        </nav>
-    </div>
-    
-
-    <div id="movies-container"></div>
-    
+  <div class="nav-bar">
+    <nav>
+      <a href="index.html">🎬 CineSearch</a>
+      <a href="favorites.html">❤️ Favorites</a>
+      <a href="watchlist.html">📌 Watchlist</a>
+    </nav>
     <div class="search-container">
-    <input type="search" id="movie_search" placeholder="please enter the movie name">
-    <button id="search">Search</button>
+      <input type="search" id="movie_search" placeholder="Search movies...">
+      <button id="search">Search</button>
     </div>
+  </div>
 
-    <button id="trending">Trending</button>
-    <button id="top-rated">Top Rated</button>
-    <button id="upcoming">Upcoming</button>
+  <div class="category-btns">
+    <button id="trending">🔥 Trending</button>
+    <button id="top-rated">⭐ Top Rated</button>
+    <button id="upcoming">🗓️ Upcoming</button>
+  </div>
 
-    
-   <script type="module" src="js/app.js"></script>
+  <div id="movies-container"></div>
+  <script type="module" src="js/app.js"></script>
 </body>
+    
+   
+
 </html>
