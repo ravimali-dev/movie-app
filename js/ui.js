@@ -1,7 +1,7 @@
 
 import {IMG_URL  } from "./config.js";
 
-function displayMovies(movies) {
+function displayMovies(movies, showRemove = false) {
     let container = document.getElementById("movies-container")
    container.innerHTML = ""
 
@@ -30,6 +30,17 @@ let favBtn = document.createElement("button")
 favBtn.className = "fav-btn"
 favBtn.textContent = "❤️"
 card.appendChild(favBtn)
+if(showRemove) {
+    let removeBtn = document.createElement("button")
+    removeBtn.className = "remove-btn"
+    removeBtn.textContent = "❌"
+    card.appendChild(removeBtn)
+}
+let watchListBtn = document.createElement("button")
+watchListBtn.className = "watch-list"
+watchListBtn.textContent = "watchList"
+card.appendChild(watchListBtn)
+
 container.appendChild(card)
     }
 }
