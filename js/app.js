@@ -29,3 +29,22 @@ upcomingBtn.addEventListener("click", function() {
     getUpcoming().then((data)=> (displayMovies(data.results)))
 })
 
+let moviesContainer = document.getElementById("movies-container")
+
+moviesContainer.addEventListener("click", (e) => {
+    if(e.target.classList.contains("fav-btn")) {
+    let card = e.target.closest(".movie-card")
+    let movieId = card.dataset.id
+    getMovieDetails(movieId).then(data => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || []
+        favorites.push(data)
+        localStorage.setItem("favorites", JSON.stringify(favorites))
+        alert("Added to favorites!")
+    })
+} 
+    else{
+        let movieId = e.target.closest(".movie-card").dataset.id
+    window.location.href = `details.html?id=${movieId}`
+    }
+    
+})
