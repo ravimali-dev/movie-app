@@ -17,29 +17,32 @@ function displayMovies(movies, showRemove = false) {
         release_date.className = "release_date"
         release_date.textContent = movie.release_date
         let vote_average = document.createElement("p")
-        vote_average.textContent = movie.vote_average
-       
+        vote_average.textContent = movie.vote_average;
+        let favBtn = document.createElement("button")
+favBtn.className = "fav-btn"
+favBtn.textContent = "❤️";
+let watchListBtn = document.createElement("button")
+watchListBtn.className = "watch-list"
+watchListBtn.textContent = "watchList"
 
-        card.appendChild(title);
-        card.appendChild(image);
-        card.appendChild(release_date);
-        card.appendChild(vote_average)
+       
+        card.appendChild(image);        // 1. Image pehle
+        card.appendChild(title);        // 2. Title
+        card.appendChild(vote_average); // 3. Rating
+       card.appendChild(release_date); // 4. Date
+       card.appendChild(favBtn);       // 5. Buttons
+        card.appendChild(watchListBtn);
         
 
-let favBtn = document.createElement("button")
-favBtn.className = "fav-btn"
-favBtn.textContent = "❤️"
-card.appendChild(favBtn)
+
+
 if(showRemove) {
     let removeBtn = document.createElement("button")
     removeBtn.className = "remove-btn"
     removeBtn.textContent = "❌"
     card.appendChild(removeBtn)
 }
-let watchListBtn = document.createElement("button")
-watchListBtn.className = "watch-list"
-watchListBtn.textContent = "watchList"
-card.appendChild(watchListBtn)
+
 
 container.appendChild(card)
     }
