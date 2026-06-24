@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="movie-details">
+        <img id="movie-poster">
+        <h1 id="movie-title"></h1>
+        <p id="movie-overview"></p>
+        <p id="movie-rating"></p>
+        <p id="movie-release"></p>
+    </div>
+
+
+
+    <script type="module">
+    import { getMovieDetails } from "./js/api.js";
+    import { IMG_URL } from "./js/config.js";
+    
+    let params = new URLSearchParams(window.location.search)
+    let movieId = params.get("id")
+    console.log(movieId) 
+    
+
+    getMovieDetails(movieId).then(data => {
+    document.getElementById("movie-title").textContent = data.title
+    document.getElementById("movie-poster").setAttribute("src", `${IMG_URL}${data.poster_path}`)
+    document.getElementById("movie-overview").textContent = data.overview
+
+    document.getElementById("movie-rating").textContent = data.vote_average
+    document.getElementById("movie-release").textContent = data.release_date
+    })
+    
+</script>
+</body>
+</html>
