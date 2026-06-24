@@ -47,4 +47,4 @@ CineSearch/
 - 🔧 **URLSearchParams** — URL se data nikalna
 
 ## 🚀 Live Demo
-movie-app-seven-neon.vercel.app
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://movie-app-seven-neon.vercel.app)
